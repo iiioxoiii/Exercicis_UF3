@@ -41,6 +41,7 @@ public class GestorPrincipalImpl implements GestorPrincipal {
                     System.out.println("Opció no vàlida");
                     break;
             }
+
         }
     }
 

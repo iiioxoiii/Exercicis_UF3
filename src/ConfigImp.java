@@ -10,34 +10,42 @@ public class ConfigImp implements Config {
 
     private final String mostraDir = "Mostrar directori";
     private final String buscallibre = "Buscar un llibre";
-    private final String buscaCategoria = "Busca categoria";
+    private final String buscaCategoria = "Busca llibres per categoria";
     private final String creaInvetari = "Crear inventari";
     private final String creaCategoria = "Crear una categoria";
     private final String catalogarLlibre = "Catalogar un llibre";
     private final String moureLlibre = "Moure un llibre";
     private final String mostrarLlibre = "Mostrar llibre";
     private final String mostrarLlibreNoTrobat = "No hi ha cap llibre amb aquest nom";
-
+    private final String llibreTrobat = "Trobat en la categoria: ";
+    private final String noLlibreTrobatEnCat = "No hi ha cap llibre trobat en la categoria o categoria innexistent";
     private final String demanaRuta = "Escriu la ruta:";
     private final String demanaTitol = "Escriu el titol del llibre:";
     private final String demanaAutor = "Escriu l'autor:";
     private final String demanaEditorial = "Escriu l'editorial:";
-
     private final String demanaQuinaCategoria = " Escriu categoria:";
     private final String demanaCategoria = "Vols inscriure'l en alguna la categoria existent? <s/n>";
 
+    public final String  demanaInstruccionsCanviCat= "Cal posa nom origen / categoria desti";
+
+
+    public String getMostraText_CanviCat(){ return demanaInstruccionsCanviCat; }
+
+    public String getMostraText_NoLlibreEnCat(){ return noLlibreTrobatEnCat; }
 
     public String getMostraText_demanaQuinaCategoria() {
         return demanaQuinaCategoria;
     }
 
-    public File getPathInventari(){return inventari;}
+    public File getInventari(){return inventari;}
 
     public File getPathBiblioteca(){
         return biblioteca;
     }
 
-    public String getMostraText_LlibreNoTrovat(){return mostrarLlibreNoTrobat;}
+    public String getMostraText_LlibreNoTrobat(){return mostrarLlibreNoTrobat;}
+
+    public String getMostraText_LlibreTrobat() { return llibreTrobat; }
 
     public String getMostraText_demanaCategoria() {
         return demanaCategoria;
@@ -80,4 +88,5 @@ public class ConfigImp implements Config {
     public String getMostraText_veureLlibre() {
         return mostrarLlibre;
     }
+
 }

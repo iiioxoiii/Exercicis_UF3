@@ -5,22 +5,27 @@ import java.io.File;
 public class GestorMenuImpl implements GestorMenu {
 
 
+    public void mostraCategoria(){
+        Scanner sc = new Scanner(System.in);
+        Config c = new ConfigImp();
+        System.out.println(c.getMostraText_buscaCategoria());
+        String nomLlibre = sc.nextLine();
+    }
+
     public void mostraBiblioteca() {
         Obrador o = new Obrador();
-        o.mostraBibli();
+        //o.mostraBibli();
+        o.mostraBibli_02();
     }
 
     public void buscaLlibre() {
-
         Scanner sc = new Scanner(System.in);
         Config c = new ConfigImp();
         System.out.println(c.getMostraText_buscaLlibre());
-        String nomLlibre = sc.next();
+        String nomLlibre = sc.nextLine();
 
         Obrador o = new Obrador();
         o.buscaLlibre(nomLlibre);
-
-        sc.close();
     }
 
     public void llibresEnCategoria() {
@@ -36,10 +41,10 @@ public class GestorMenuImpl implements GestorMenu {
     }
 
     public void creaInventari() {
+
         Obrador o = new Obrador();
 
         o.creaInventari();
-
     }
 
     public void creaCategoria() {
@@ -48,7 +53,7 @@ public class GestorMenuImpl implements GestorMenu {
 
         Scanner sc = new Scanner(System.in);
         Config c = new ConfigImp();
-        c.getMostraText_creaCategoria();
+        System.out.println(c.getMostraText_creaCategoria());
         String nomCategoria = sc.next();
 
         o.creaCategoria(nomCategoria);
@@ -98,9 +103,33 @@ public class GestorMenuImpl implements GestorMenu {
 
     public void mostraLlibre() {
 
+        Obrador o = new Obrador();
+
+        Config c = new ConfigImp();
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println(c.getMostraText_demanaTitol());
+        String nomLlibre = sc.nextLine();
+        o.mostraAtributsLlibre(nomLlibre);
+
+
     }
 
     public void moureLlibre() {
+
+        Obrador o = new Obrador();
+
+        Config c = new ConfigImp();
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println(c.getMostraText_CanviCat());
+        System.out.println(c.getMostraText_demanaTitol());
+        String nomLlibre = sc.nextLine();
+        //categoria destí
+        System.out.println(c.getMostraText_demanaCategoria());
+        String catDesti = sc.nextLine();
+
+        o.mouLlibre(nomLlibre, catDesti);
 
     }
 }

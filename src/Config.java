@@ -19,11 +19,15 @@ public interface Config {
 
     String getMostraText_moureLlibre();
     String getMostraText_veureLlibre();
-    String getMostraText_LlibreNoTrovat();
+    String getMostraText_LlibreNoTrobat();
+    String getMostraText_LlibreTrobat();
+    String getMostraText_NoLlibreEnCat();
 
     String getMostraText_demanaCategoria();
     String getMostraText_demanaQuinaCategoria();
 
     File getPathBiblioteca();
+    File getInventari();
 
+    String getMostraText_CanviCat();
 }
